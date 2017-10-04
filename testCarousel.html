@@ -1,0 +1,125 @@
+<div class="row sectionWhite">
+	<div class="col-sm-12">
+		<h2 class="filter-title" style="margin-bottom:20px; text-align:center;background:none;"><span class="content"><strong>Testimonials</strong></span></h2>
+	</div>
+	<div class="col-sm-12">		
+      <div class="carousel slide multi-item-carousel" id="testiCarousel">
+	  
+	    <ol class="carousel-indicators">
+			<li data-target="#testiCarousel" data-slide-to="0" class="active"></li>
+			<li data-target="#testiCarousel" data-slide-to="1"></li>
+			<li data-target="#testiCarousel" data-slide-to="2"></li>
+			<li data-target="#testiCarousel" data-slide-to="3"></li>
+			<li data-target="#testiCarousel" data-slide-to="4"></li>
+		</ol>
+		
+        <div class="carousel-inner">
+          <div class="item active">
+            <div class="col-sm-6">
+				<h5 class="testiTitle">Florence Hawkins</h5>
+				<p class="testiBody">Great Company...would definitely do business with them again!</p>
+			</div>
+          </div>
+          <div class="item">
+            <div class="col-sm-6">
+				<h5 class="testiTitle">Matthew Wolf</h5>
+				<p class="testiBody">Talked to Malik and was able to agree on trading cables for my server. I got a pair of SAS cables for my R710 while I gave them in return a set of SAS cables for a R810. Very understanding and willing to help out you just have to ask.</p>
+			</div>
+          </div>
+          <div class="item">
+            <div class="col-sm-6">
+				<h5 class="testiTitle">Guy Raymond</h5>
+				<p class="testiBody">We purchased 2 servers from Stallion. We did have an issue that Stallion resolved right away. 
+				I ran into another issue and was working with Cardiff off and on as I tried to resolve the issue. 
+				Cardiff returned every email promptly and gave me suggestions. Together we worked out my issue! 
+				He was patient and gave me a sense that my issue was important even if it wasn't Stallions problem! Thanks Cardiff!</p>
+			</div>
+          </div>
+          <div class="item">
+            <div class="col-sm-6">
+				<h5 class="testiTitle">Florence Hawkins</h5>
+				<p class="testiBody">Great Company...would definitely do business with them again!</p>
+			</div>
+          </div>
+          <div class="item">
+            <div class="col-sm-6">
+				<h5 class="testiTitle">Florence Hawkins</h5>
+				<p class="testiBody">Great Company...would definitely do business with them again!</p>
+			</div>
+          </div>
+ 
+        </div>
+        <a class="left carousel-control" href="#testiCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+        <a class="right carousel-control" href="#testiCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+      </div>
+<style>
+
+.multi-item-carousel{
+  .carousel-inner{
+    > .item{
+      transition: 500ms ease-in-out left;
+    }
+    .active{
+      &.left{
+        left:-50%;
+      }
+      &.right{
+        left:50%;
+      }
+    }
+    .next{
+      left: 50%;
+    }
+    .prev{
+      left: -50%;
+    }
+    @media all and (transform-3d), (-webkit-transform-3d) {
+      > .item{
+        // use your favourite prefixer here
+        transition: 500ms ease-in-out left;
+        transition: 500ms ease-in-out all;
+        backface-visibility: visible;
+        transform: none!important;
+      }
+    }
+  }
+}
+.carousel-control.left, .carousel-control.right{width:5%;background:none;}
+#testiCarousel .col-sm-6{text-align:center;}
+#testiCarousel .carousel-inner{height:150px;}
+.testiTitle{color:#0073c6; font-size:24px;padding-bottom:20px;}
+.testiBody{color:#333333;font-size:14px;}
+.carousel-indicators li{background-color:#0073c6;border:1px solid #0073c6;}
+.carousel-indicators{bottom:-30px;}
+</style>
+<script>
+ jQuery(function($){
+	$('.multi-item-carousel').carousel({
+	  interval: 5000
+	});
+
+	// for every slide in carousel, copy the next slide's item in the slide.
+	// If want 3 items Do the same for the next, next item.
+	$('.multi-item-carousel .item').each(function(){
+	  var next = $(this).next();
+	  if (!next.length) {
+		next = $(this).siblings(':first');
+	  }
+	  next.children(':first-child').clone().appendTo($(this));
+	  
+	 /* if (next.next().length>0) {
+		next.next().children(':first-child').clone().appendTo($(this));
+	  } else {
+		$(this).siblings(':first').children(':first-child').clone().appendTo($(this));
+	  } */
+	});
+
+})
+</script>
+	</div>
+</div>
+
+
+<style>
+.onepage-cat.category-list + .main.container{padding:50px;width:100%;}
+</style>

@@ -1,0 +1,34 @@
+<table id="container">
+    <tr><th>Column 1</th><th>Column 2</th></tr>
+    <tr>
+        <td><input type="text" value="Test 1" /></td>
+        <td><input type="text" value="Test 2" /></td>
+        <td><button>Edit</button></td>
+    </tr>
+    <tr>
+        <td><input type="text" value="Test 1" /></td>
+        <td><input type="text" value="Test 2" /></td>
+        <td><button>Edit</button></td>
+    </tr>
+    <tr>
+        <td><input type="text" value="Test 1" /></td>
+        <td><input type="text" value="Test 2" /></td>
+        <td><button>Edit</button></td>
+    </tr>
+</table>
+<script>
+function setupRows(context) {
+  $("span.view", context).remove();
+  $('input', context).each(function() {
+    $("<span />", { text: this.value, "class":"view" }).insertAfter(this);
+    $(this).hide();
+  });
+}
+setupRows('#container');
+
+$("button").toggle(function() {
+    $(this).closest("tr").find("input, span.view").toggle();
+}, function() {
+    setupRows($(this).closest("tr"));
+});
+</script>

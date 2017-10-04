@@ -1,0 +1,67 @@
+ <ul id="wrapper">
+    <li><a href="#">Projects <span class="number">3</span> </a></li>
+    <li><a href="#">Music <span class="number">4</span> </a></li>
+    <li><a href="#">Photos <span class="number">2</span> </a></li>
+</ul>
+<style>
+#wrapper    {       width:400px;
+                    margin:50px auto 0 auto;
+                    border-radius:20px;
+                    overflow:hidden;
+                    background:#222;
+                    border:1px solid #00c6ff;
+                    border: inset 1px #555;}
+                    
+.number     {       padding: 0 50px 0 0;
+                    float:right;}
+                    
+a.selected 
+            {       background:#00c6ff;
+                    color:#333;}
+                         
+li          {       
+                    
+                    font-family:'Roboto Condensed', Arial, Helvetica, sans-serif;
+                    font-size:20px;
+  
+                    
+                    color:#00c6ff;}
+                    
+                    
+li a        {       color:#00c6ff;
+                    padding:20px;
+                    width:100%;
+                    display: block;
+                    background-image: linear-gradient(to left,
+                                      transparent,
+                                      transparent 50%,
+                                      #00c6ff 50%,
+                                      #00c6ff);
+                   background-position: 100% 0;
+    background-size: 200% 100%;
+    transition: all .25s ease-in;
+    
+                    
+}
+
+li a:hover {        background-position: 0 0;
+                    color:#333;
+}
+
+</style>
+<br><br>
+<div class="box"></div>
+<style>
+.box {
+    width: 200px; height: 100px;
+    background-size: 100% 200%;
+    background-image: linear-gradient(to top, green 50%, white 50%);
+    -webkit-transition: background-position .5s;
+    -moz-transition: background-position .5s;
+    transition: background-position .5s;
+}
+
+.box:hover {
+    background-position: 0 100%;
+}
+</style>

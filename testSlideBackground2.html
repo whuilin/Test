@@ -1,0 +1,25 @@
+<div class="box"></div>
+<style>
+.box {
+    width: 200px; height: 100px;
+    background-size: 100% 200%;
+    background-image: linear-gradient(to top, green 50%, white 50%);
+    -webkit-transition: background-position .5s;
+    -moz-transition: background-position .5s;
+    transition: background-position .5s;
+}
+
+.box:hover {
+    background-position: 0 100%;
+}
+</style>
+<script>
+ jQuery(function($) {
+	if(window.location == "https://www.stalliontek.com/testpage"){
+	alert("test page");
+	}
+	else{
+		alert("not test page");
+	}
+});
+</script>

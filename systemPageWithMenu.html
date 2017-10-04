@@ -1,0 +1,1274 @@
+<script type="text/javascript">
+ jQuery(function($){
+var $root = $('html, body');
+$('a').click(function() {
+    $root.animate({
+        scrollTop: $( $.attr(this, 'href') ).offset().top -100
+    }, 500);
+    return false;
+});      
+});
+
+function setModalSrc(serverTitle, pdfSrc){
+	document.getElementById("specsModalLabel").innerHTML = serverTitle;
+	document.getElementById("specsIframe").src = pdfSrc;
+}
+
+</script>
+<style>
+/* Float and glow */
+.hvr-floatGlow {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-floatGlow:hover, .hvr-float:focus, .hvr-float:active {
+  -webkit-transform: translate(-8px, -8px);
+  transform: translate(-8px, -8px);
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.6);
+}
+
+/* Icon Up */
+@-webkit-keyframes hvr-icon-up {
+  0%,
+	50%,
+	100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  25%,
+	75% {
+    -webkit-transform: translateY(-6px);
+    transform: translateY(-6px);
+  }
+}
+@keyframes hvr-icon-up {
+  0%,
+	50%,
+	100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  25%,
+	75% {
+    -webkit-transform: translateY(-6px);
+    transform: translateY(-6px);
+  }
+}
+/* Icon Up */
+.hvr-icon-up {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  position: relative;
+  padding-right: 2.2em;
+}
+.hvr-icon-up:before {
+  content: "\f01b";
+  position: absolute;
+  right: 1em;
+  padding: 0 1px;
+  font-family: FontAwesome;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+.hvr-icon-up:hover:before, .hvr-icon-up:focus:before, .hvr-icon-up:active:before {
+  -webkit-animation-name: hvr-icon-up;
+  animation-name: hvr-icon-up;
+  -webkit-animation-duration: 0.75s;
+  animation-duration: 0.75s;
+  -webkit-animation-timing-function: ease-out;
+  animation-timing-function: ease-out;
+}
+/* Float */
+.hvr-float {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-float:hover, .hvr-float:focus, .hvr-float:active {
+  -webkit-transform: translateY(-8px);
+  transform: translateY(-8px);
+}
+/* Sink */
+.hvr-sink {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-sink:hover, .hvr-sink:focus, .hvr-sink:active {
+  -webkit-transform: translateY(8px);
+  transform: translateY(8px);
+}
+/* Icon Down */
+@-webkit-keyframes hvr-icon-down {
+  0%,
+	50%,
+	100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  25%,
+	75% {
+    -webkit-transform: translateY(6px);
+    transform: translateY(6px);
+  }
+}
+@keyframes hvr-icon-down {
+  0%,
+	50%,
+	100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  25%,
+	75% {
+    -webkit-transform: translateY(6px);
+    transform: translateY(6px);
+  }
+}
+/* Icon Down */
+.hvr-icon-down {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  position: relative;
+  padding-right: 2.2em;
+}
+.hvr-icon-down:before {
+  content: "\f01a";
+  position: absolute;
+  right: 1em;
+  padding: 0 1px;
+  font-family: FontAwesome;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+.hvr-icon-down:hover:before, .hvr-icon-down:focus:before, .hvr-icon-down:active:before {
+  -webkit-animation-name: hvr-icon-down;
+  animation-name: hvr-icon-down;
+  -webkit-animation-duration: 0.75s;
+  animation-duration: 0.75s;
+  -webkit-animation-timing-function: ease-out;
+  animation-timing-function: ease-out;
+}
+/* Pulse */
+@-webkit-keyframes hvr-pulse {
+  25% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  75% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+}
+@keyframes hvr-pulse {
+  25% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  75% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+}
+.hvr-pulse {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+}
+.hvr-pulse:hover, .hvr-pulse:focus, .hvr-pulse:active {
+  -webkit-animation-name: hvr-pulse;
+  animation-name: hvr-pulse;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+.table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
+   background-color: #deeaf3;
+}
+
+.back-to-top{
+color:#ffffff;
+padding:3px
+}
+
+.dropdown-menu {
+    height:auto;
+    list-style:none;
+    width: 68%; /******* MODIFIED ********/
+    margin: 5px 0 0 0;
+	padding: 0px;
+}
+.dropdown-menu li {
+    height: 35px;
+    margin: 0;
+    background-color: #333333;
+    display: inline-block;
+    float: left;
+    clear:both;
+    width: 100%;  /******* MODIFIED ********/
+}
+.dropdown-menu li:hover {
+    background-color:#EF6B00;
+    color:#FFFFFF;
+}
+.dropdown-menu li a {
+    font-family:Calibri, Arial;
+    font-size:18px;
+    font-weight:bold;
+    color:#ffffff;
+    text-decoration:none;
+}
+.dropdown-menu li.current {
+    background-color:#EF6B00;
+}
+.dropdown-menu li.current a {
+    color:#FFFFFF;
+}
+dropdown-menu ul li ul {
+    display:none;
+    list-style-type:none;
+    width:125px;
+    padding:0px;
+    margin-top:3px;
+    margin-left:-5px;
+}
+dropdown-menu ul li:hover ul {
+    display:block;
+}
+dropdown-menu ul li:hover ul li {
+    background-color:#555555;
+    width:125px;
+    height:30px;
+    display:inline-block;
+}
+dropdown-menu ul li ul li:hover {
+    background-color:#333333;
+}
+dropdown-menu ul li ul li a {
+    color:#FFF;
+    text-decoration:underline;
+}
+dropdown-menu ul li ul li a:hover {
+    text-decoration:none;
+}
+
+.dropdown-menu li ul {
+    display: none;
+	margin-top: 10px;
+    padding: 0;
+}
+.dropdown-menu li:hover ul {
+    display: block;
+}
+.dropdown-menu li:hover .sub-menu
+{
+    position: relative;   
+    margin-top: -27px;
+}
+
+.sub-menu li
+{
+    position: relative;
+    display: block;
+    top: 0;
+    left: 100%;
+    width: 30%;
+    min-width: 100px;
+    white-space: nowrap;
+    z-index:1;
+}
+.sub-menu li a
+{
+    display:inline-block;
+    padding: 5px 10px;
+	width:100%;
+}
+
+.table > thead > tr > th {
+     text-align:center;
+     vertical-align: middle;
+	 font-size:18px;
+	 font-weight:bold;
+	 background-color:#0072c6;
+	 color:#ffffff;
+}
+.table > tbody > tr > td {
+     text-align:center;
+     vertical-align: middle;
+}
+.table > tbody > tr > td > a {
+	color:#0072C6;
+}
+.serverTitle{
+font-size:48px;
+font-weight:bold;
+}
+.serverDescription{
+font-size:18px;
+}
+.section-link{
+    position: relative;
+    min-width: 160px;
+    height: 60px;
+    border-radius: 5px;
+    line-height: 36px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+    background-color: #ef6b00;
+	padding: 10px 10px 0px 35px;
+}
+.section-link a{
+font-size:24px;
+color:#ffffff;
+}
+.section-contact{
+padding-left:10px;
+}
+.section-des{
+display:inline-block;
+text-align:center;
+font-size:24px;
+width:64%;
+}
+.anchorM{
+display:block; 
+position:relative;
+top:-100px; 
+visibility:hidden;
+}
+.serverType{
+width:12%; text-align:center; font-size:36px;
+}
+.tableRow{
+font-size:16px;
+}
+	/* 
+	Max width before this PARTICULAR table gets nasty
+	This query will take effect for any screen smaller than 760px
+	and also iPads specifically.
+	*/
+	@media 
+	only screen and (max-width: 760px),
+	(min-device-width: 768px) and (max-device-width: 1024px)  {
+	
+		/* Force table to not be like tables anymore */
+		table, thead, tbody, th, td, tr { 
+			display: block; 
+		}
+		
+		/* Hide table headers (but not display: none;, for accessibility) */
+		thead tr { 
+			position: absolute;
+			top: -9999px;
+			left: -9999px;
+		}
+		
+		tr { border: 1px solid #ccc; }
+		
+		td { 
+			/* Behave  like a "row" */
+			border: none;
+			border-bottom: 1px solid #eee; 
+			position: relative;
+			padding-left: 50%; 
+		}
+		
+		td:before { 
+			/* Now like a table header */
+			position: absolute;
+			/* Top/left values mimic padding */
+			top: 6px;
+			left: 6px;
+			width: 45%; 
+			padding-right: 10px; 
+			white-space: nowrap;
+		}
+		
+		/*
+		Label the data
+		*/
+		td:nth-of-type(1):before { content: ""; }
+		td:nth-of-type(2):before { content: ""; }
+		td:nth-of-type(3):before { content: ""; }
+		td:nth-of-type(4):before { content: ""; }
+		td:nth-of-type(5):before { content: ""; }
+		td:nth-of-type(6):before { content: ""; }
+		
+		.serverType{
+		width:100%; text-align:center; font-size:24px; padding-bottom:10px;
+		}
+		.tableRow{
+		margin-right:-50px;
+		}
+		.tableCol{
+		padding-right:0px;
+		}
+	}
+	
+	/* Smartphones (portrait and landscape) ----------- */
+	@media only screen
+	and (min-device-width : 320px)
+	and (max-device-width : 480px) {
+		body { 
+			padding: 0; 
+			margin: 0; 
+			width: 320px; }
+			
+		}
+		
+	
+	/* iPads (portrait and landscape) ----------- */
+	@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+		body { 
+			width: 495px; 
+		}
+	}
+</style>
+
+<a class="anchor" id = "page-top"></a>
+	<div class="row" style="margin-left:-20px; margin-right:-50px; margin-bottom:20px;">
+		<div class="col-sm-12" style="padding-left:0; padding-right:0; z-index:0" >
+					<img src="media/banner_systems2.png" width=100% height= 100% alt="..." class="">
+		</div>
+	</div>
+	
+	<div class="row" style="margin-left:-20px; margin-right:-50px; margin-bottom:20px;">
+	
+		<div class="col-sm-1" style="width:4%;"></div>
+		
+		<div class="col-sm-2 hvr-floatGlow dropdown show" style="padding-left:0; padding-right:0; z-index:2" >
+			<a href="#" class="dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<img src="media/sys_server.png" width=100% height= 100% alt="..." class="">
+			</a> 
+			<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+				<li><a href="#hpM">HP</a>
+					<ul class="sub-menu">
+						<li><a href="#hp1uM">HP 1U</a></li>
+						<li><a href="#hp2uM">HP 2U</a></li>
+						<li><a href="#hp3uM">HP 3U+</a></li>
+						<li><a href="#hpbladesM">HP Blades</a></li>
+					</ul>
+				</li>
+				<li><a href="#dellM">Dell</a>
+				<ul class="sub-menu">
+						<li><a href="#dellM">Dell 1U</a></li>
+						<li><a href="#dell2uM">Dell 2U</a></li>
+						<li><a href="#dell3uM">Dell 3U+</a></li>
+						<li><a href="#dellbladesM">Dell Blades</a></li>
+					</ul>
+				</li>
+				<li><a href="#otherServers">Other Servers</a></li>
+			</ul>
+		</div>
+		
+		<div class="col-sm-1"></div>
+		
+		<div class="col-sm-2 hvr-floatGlow" style="padding-left:0; padding-right:0" >
+				<a href="https://www.stalliontek.com/used-refurbished-servers/laptops-and-tabs" class="">
+					<img src="media/sys_laptop.png" width=100% height= 100% alt="..." class="">
+				</a> 
+		</div>
+		
+		<div class="col-sm-1"></div>
+		
+		<div class="col-sm-2 hvr-floatGlow" style="padding-left:0; padding-right:0" >
+				<a href="https://www.stalliontek.com/used-refurbished-servers/desktops-and-workstations" class="">
+					<img src="media/sys_desktop.png" width=100% height= 100% alt="..." class="">
+				</a> 
+		</div>
+		
+		<div class="col-sm-1"></div>
+		
+		<div class="col-sm-2 hvr-floatGlow" style="padding-left:0; padding-right:0" >
+				<a href="https://www.stalliontek.com/used-refurbished-servers/storage-solutions" class="">
+					<img src="media/sys_ss.png" width=100% height= 100% alt="..." class="">
+				</a> 
+		</div>	
+		
+		<div class="col-sm-1" style="width:4%;"></div>
+		
+	</div>
+
+	<div class="row" style="margin-left:-20px; margin-right:-50px; margin-bottom:20px;">
+		<div class="col-sm-12" style="padding-left:0; padding-right:0;">
+			<img src="media/thousands_of_servers2.jpg" width=100% height= 100%>
+		</div>
+	</div>
+	
+<br>
+	<p>
+	<a class="anchor" id = "hp"></a>
+	<a class="anchorM" id = "hpM"></a>
+	<div class="serverTitle">HP Servers</div><br>	
+	<div class="serverDescription">HP ProLiant Servers provide a complete infrastructure that support both your business objectives and your business growth.</div>
+	</p>
+	
+	<a class="anchor" id = "hp1u"></a>
+	<a class="anchorM" id = "hp1uM"></a>
+<div class="row tableRow">
+	<div class="col-sm-1 serverType" style="padding-top:15%;">HP 1U Rackmount</div>
+	<div class="col-sm-11 tableCol" style="width:88%;">
+		<table class="table table-bordered table-striped" style="box-shadow: 5px 10px 20px #cecece;">
+		<thead>
+		  <tr>
+			<th style="width:7%">Generation</th>
+			<th style="width:10%">Model</th>
+			<th style="width:50%">Description</th>
+			<th style="width:5%">Spec Sheet</th>
+			<th style="width:5%">Starting Price</th>
+			<th style="width:6%; background-color:#ef6b00"><a href="#page-top" Class="back-to-top">Top<i class=" icon-angle-double-up"></i></a></th>
+		  </tr>
+		</thead>
+		<tbody>
+		  <tr>
+			<td>Gen 6</td>
+			<td>ProLiant DL360<br>
+			<img src="media/sys_dl360g6.png" width=100%>
+			</td>
+			<td style="font-size:16px">
+				<ul>
+				<li>Supports up to 2x Intel® Xeon 5500 or 5600 Series Processors</li>
+				<li>Up to 12 MB cache</li>
+				<li>Supports up to 144GB on 18 DIMM Slots</li>
+				<li>Up to 4x 2.5" SAS/SATA drives</li>
+				</ul>
+			</td>
+			<td>
+				<a href="#" onclick="setModalSrc('HP ProLiant DL360 G6 Datasheet','stalliontek_server_specs/dl360g6.pdf#zoom=100')" data-toggle="modal" data-target="#specsModal">View</a>
+			</td>
+			<td>$99</td>
+			<td><a href="https://www.stalliontek.com/refurbished-hp-proliant-dl360-g6-4-bay-configure-to-order" target="_blank">Configure Now</a></td>
+		  </tr>
+		  <tr>
+			<td>Gen 7</td>
+			<td>ProLiant DL360<br>
+				<img src="https://www.stalliontek.com/media/sys_dl360g7.png" width=100%>
+			</td>
+			<td style="font-size:16px">
+				<ul>
+				<li>Supports up to 2x Intel® Xeon 5500 or 5600 Series Processors</li>
+				<li>Up to 12 MB L3 cache</li>
+				<li>Supports up to 384GB on 18 DIMM Slots</li>
+				<li>Up to 4x 2.5" SAS/SATA drives or 8x hot-plug 2.5" SAS/SATA drives</li>
+				</ul>
+			</td>
+			<td>
+				<a href="#" onclick="setModalSrc('HP ProLiant DL360 G7 Datasheet','stalliontek_server_specs/dl360g7.pdf#zoom=100')" data-toggle="modal" data-target="#specsModal">View</a>
+			</td>
+			<td>$249</td>
+			<td><a href="https://www.stalliontek.com/used-refurbished-servers/servers/hp-servers/hp-1u-servers/hp-proliant-dl360-g7" target="_blank">Configure Now</a></td>
+		  </tr>
+		  <tr>
+			<td rowspan="2">Gen 8</td>
+			<td>ProLiant DL360e<br>
+				<img src="https://www.stalliontek.com/media/sys_dl360eg8.png" width=100%>
+			</td>
+			<td style="font-size:16px">
+				<ul>
+				<li>Supports up to 2x Intel® Xeon E5-2400 Series Processors</li>
+				<li>Up to 20 MB L3 cache</li>
+				<li>Supports up to 384GB on 18 DIMM Slots</li>
+				<li>Up to 8x hot-plug SFF 2.5" SAS/SATA or Up to 4x hot-plug LFF 3.5" SAS or SATA</li>
+				</ul>
+			</td>
+			<td>
+				<a href="#" onclick="setModalSrc('HP ProLiant DL360e G8 Datasheet','stalliontek_server_specs/dl360eg8.pdf#zoom=100')" data-toggle="modal" data-target="#specsModal">View</a>
+			</td>
+			<td>$399</td>
+			<td><a href="https://www.stalliontek.com/used-refurbished-servers/servers/hp-servers/hp-1u-servers/hp-proliant-dl360e-g8" target="_blank">Configure Now</a></td>
+		  </tr>
+		  <tr>
+			<td>ProLiant DL360p<br>
+				<img src="https://www.stalliontek.com/media/sys_dl360pg8.png" width=100%>
+			</td>
+			<td style="font-size:16px">
+				<ul>
+				<li>Supports up to 2x Intel® Xeon E5-2600 v2 Series Processors</li>
+				<li>Up to 20 MB L3 cache</li>
+				<li>Supports up to 384GB on 18 DIMM Slots</li>
+				<li>Up to 8x hot-plug SFF SAS or SATA</li>
+				</ul>
+			</td>
+			<td>
+				<a href="#" onclick="setModalSrc('HP ProLiant DL360p G8 Datasheet','stalliontek_server_specs/dl360p.pdf#zoom=100')" data-toggle="modal" data-target="#specsModal">View</a>
+			</td>
+			<td>$899</td>
+			<td><a href="https://www.stalliontek.com/used-refurbished-servers/servers/hp-servers/hp-1u-servers/hp-proliant-dl360p-g8" target="_blank">Configure Now</a></td>
+		  </tr>
+		  <tr>
+			<td style="background-color:#ffffff;">Gen 9</td>
+			<td>ProLiant DL360<br>
+				<img src="https://www.stalliontek.com/media/sys_dl360g9.png" width=100%>
+			</td>
+			<td style="font-size:16px">
+				<ul>
+				<li>Supports up to 2x Intel® Xeon E5-2600 v3 Series Processors</li>
+				<li>Up to 45 MB L3 cache</li>
+				<li>Supports up to 768GB</li>
+				<li>Up to 8x hot-plug 2.5" SAS/SATA or Up to 4x hot-plug 3.5" SAS/SATA</li>
+				</ul>
+			</td>
+			<td>
+				<a href="#" onclick="setModalSrc('HP ProLiant DL360 G9 Datasheet','stalliontek_server_specs/dl360g9.pdf#zoom=100')" data-toggle="modal" data-target="#specsModal">View</a>
+			</td>
+			<td>$1524</td>
+			<td><a href="https://www.stalliontek.com/used-refurbished-servers/servers/hp-servers/hp-1u-servers/hp-proliant-dl360-g9" target="_blank">Configure Now</a></td>
+		  </tr>	 		  
+		</tbody>
+		</table>
+	</div>
+</div>
+	
+<!-- start of specs modal -->
+<div class="row">
+	<div class="modal fade specsModal" tabindex="-1" role="dialog" aria-labelledby="specsModalLabel" aria-hidden="true" id="specsModal">
+	  <div class="modal-dialog modal-lg" role="document">
+		  <div class="modal-content">
+			<div class="modal-header" >
+			  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			  <br>
+			  <h2 class="modal-title" style="text-align:center" id="specsModalLabel" >title</h2>
+			</div>
+			<div class="modal-body" style="text-align: left; height: 750px;  overflow-y: auto;">		
+			<iframe id="specsIframe" width="100%" height="99%" src=""></iframe>	
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+	  </div>
+	</div>
+</div>
+<!-- end of specs modal -->  	
+
+<a class="anchor" id = "hp2u"></a>
+<a class="anchorM" id = "hp2uM"></a>
+<div class="row tableRow">
+	<div class="col-sm-1 serverType" style="padding-top:15%;">HP 2U Rackmount</div>
+	<div class="col-sm-11 tableCol" style="width:88%;">
+		<table class="table table-bordered table-striped" style="box-shadow: 5px 10px 20px #cecece;">
+		<thead>
+		  <tr>
+			<th style="width:7%">Generation</th>
+			<th style="width:10%">Model</th>
+			<th style="width:50%">Description</th>
+			<th style="width:5%">Spec Sheet</th>
+			<th style="width:5%">Starting Price</th>
+			<th style="width:6%; background-color:#ef6b00"><a href="#page-top" Class="back-to-top">Top<i class=" icon-angle-double-up"></i></a></th>
+		  </tr>
+		</thead>
+		<tbody>
+		  <tr>
+			<td rowspan = "2" style="background-color:#ffffff;">Gen 6</td>
+			<td>ProLiant DL180<br>
+			<img src="media/sys_dl180g6.png" width=100%>
+			</td>
+			<td style="font-size:16px">
+				<ul>
+				<li>Up to 2x Intel Xeon 5500 and 5600 series processors Processors</li>
+				<li>Up to 12 MB cache</li>
+				<li>Up to 144GB PC3-8500 ECC RDIMM, 72GB PC3-10600R, or 36GB PC3-10600E</li>
+				<li>Up to 12x 3.5” SAS/SATA</li>
+				</ul>
+			</td>
+			<td>
+				<a href="#" onclick="setModalSrc('HP ProLiant DL180 G6 Datasheet','stalliontek_server_specs/dl180g6.pdf#zoom=100')" data-toggle="modal" data-target="#specsModal">View</a>
+			</td>
+			<td>$175</td>
+			<td><a href="https://www.stalliontek.com/used-refurbished-servers/servers/hp-servers/hp-2u-servers/hp-proliant-dl180-g6" target="_blank">Configure Now</a></td>
+		  </tr>
+		  <tr>
+			<td>ProLiant DL380<br>
+				<img src="media/sys_dl380g6.png" width=100%>
+			</td>
+			<td style="font-size:16px">
+				<ul>
+				<li>Up to 2x Intel® Xeon 5500 or 5600 Series Processors</li>
+				<li>Up to 12 MB L3</li>
+				<li>Up to 192 GB for Registered Memory configurations</li>
+				<li>Up to 8x hot-plug 2.5" SAS/SATA drives</li>
+				</ul>
+			</td>
+			<td>
+				<a href="#" onclick="setModalSrc('HP ProLiant DL380 G6 Datasheet','stalliontek_server_specs/dl380g6.pdf#zoom=100')" data-toggle="modal" data-target="#specsModal">View</a>
+			</td>
+			<td>$99</td>
+			<td><a href="https://www.stalliontek.com/used-refurbished-servers/servers/hp-servers/hp-2u-servers/hp-proliant-dl380-g6" target="_blank">Configure Now</a></td>
+		  </tr>
+		  <tr>
+			<td>Gen 7</td>
+			<td>ProLiant DL380<br>
+				<img src="media/sys_dl380g7.png" width=100%>
+			</td>
+			<td style="font-size:16px">
+				<ul>
+				<li>Up to 2x dual, quad or six-core Intel® Xeon 5600 Series</li>
+				<li>Up to 12 MB L3 cache</li>
+				<li>Up to 384 GB on 18 DIMM slots</li>
+				<li>Supports 16x hot-plug 2.5"SAS/SATA drives or 8x hot-plug 2.5"SAS/SATA drives</li>
+				</ul>
+			</td>
+			<td>
+				<a href="#" onclick="setModalSrc('HP ProLiant DL380 G7 Datasheet','stalliontek_server_specs/dl380g7.pdf#zoom=100')" data-toggle="modal" data-target="#specsModal">View</a>
+			</td>
+			<td>$299</td>
+			<td><a href="https://www.stalliontek.com/used-refurbished-servers/servers/hp-servers/hp-2u-servers/hp-proliant-dl380-g7" target="_blank">Configure Now</a></td>
+		  </tr>
+		  <tr>
+		    <td>Gen 8</td>
+			<td>ProLiant DL380p<br>
+				<img src="media/sys_dl380pg8.png" width=100%>
+			</td>
+			<td style="font-size:16px">
+				<ul>
+				<li>Up to 2x Intel Xeon E5-2600 Series Processors</li>
+				<li>Up to 25 MB L3 cache</li>
+				<li>Up to 768GB PC3L-8500 LRDIMM (24 DIMM Slots) or Up to 384GB PC3-10600 ECC RDIMM, HDIMM or Up to 128GB PC3-10600 UDIMM</li>
+				<li>Up to 8x 2.5" SAS/SATA hard drives</li>
+				</ul>
+			</td>
+			<td>
+				<a href="#" onclick="setModalSrc('HP ProLiant DL380p G8 Datasheet','stalliontek_server_specs/dl380p.pdf#zoom=100')" data-toggle="modal" data-target="#specsModal">View</a>
+			</td>
+			<td>$1299</td>
+			<td><a href="https://www.stalliontek.com/used-refurbished-servers/servers/hp-servers/hp-2u-servers/hp-proliant-dl380p-g8" target="_blank">Configure Now</a></td>
+		  </tr>
+		  <tr>
+		    <td>Gen 9</td>
+			<td>ProLiant DL380<br>
+				<img src="media/sys_dl380g9.png" width=100%>
+			</td>
+			<td style="font-size:16px">
+				<ul>
+				<li>Up to 2x Intel Xeon E5-2600 v3 Series Processors</li>
+				<li>Up to 25 MB L3 cache</li>
+				<li>Up to 768GB PC4L-14900 LRDIMM (24 DIMM Slots)</li>
+				<li>Up to 8x 2.5" SAS/SATA/SSD HP SC hard drives</li>
+				</ul>
+			</td>
+			<td>
+				<a href="#" onclick="setModalSrc('HP ProLiant DL380 G9 Datasheet','stalliontek_server_specs/dl380g9.pdf#zoom=100')" data-toggle="modal" data-target="#specsModal">View</a>
+			</td>
+			<td>$1724</td>
+			<td><a href="https://www.stalliontek.com/used-refurbished-servers/servers/hp-servers/hp-2u-servers/hp-proliant-dl380-g9" target="_blank">Configure Now</a></td>
+		  </tr>	 		  
+		</tbody>
+		</table>
+	</div>
+</div>
+
+<p>
+	<a class="anchor" id = "hp3u"></a>
+	<a class="anchorM" id = "hp3uM"></a>
+</p>
+<div class="row tableRow">
+	<div class="col-sm-1 serverType" style="padding-top:3%;">HP 3U+ Rackmount</div>
+	<div class="col-sm-11 tableCol" style="width:88%;">
+		<table class="table table-bordered table-striped" style="box-shadow: 5px 10px 20px #cecece;">
+		<thead>
+		  <tr>
+			<th style="width:7%">Generation</th>
+			<th style="width:10%">Model</th>
+			<th style="width:50%">Description</th>
+			<th style="width:5%">Spec Sheet</th>
+			<th style="width:5%">Starting Price</th>
+			<th style="width:6%; background-color:#ef6b00"><a href="#page-top" Class="back-to-top">Top<i class=" icon-angle-double-up"></i></a></th>
+		  </tr>
+		</thead>
+		<tbody>
+		  <tr>
+			<td>Gen 7</td>
+			<td>ProLiant DL580<br>
+			<img src="media/sys_dl580g7.png" width=100%>
+			</td>
+			<td style="font-size:16px">
+				<ul>
+				<li>Up to 4x E7-4800 Series Intel Xeons Processors</li>
+				<li>Up to 24 MB cache</li>
+				<li>Up to 1TB PC3-10600 ECC RDIMM (64 DIMM Slots)</li>
+				<li>Up to 8x 2.5" SAS/SATA hard drivess</li>
+				</ul>
+			</td>
+			<td>
+				<a href="#" onclick="setModalSrc('HP ProLiant DL580 G7 Datasheet','stalliontek_server_specs/dl580g7.pdf#zoom=100')" data-toggle="modal" data-target="#specsModal">View</a>
+			</td>
+			<td>$399</td>
+			<td><a href="https://www.stalliontek.com/used-refurbished-servers/servers/hp-servers/hp-3u-servers/hp-proliant-dl580-g7" target="_blank">Configure Now</a></td>
+		  </tr>		
+		</tbody>
+		</table>
+	</div>
+</div>
+
+<p>
+	<a class="anchor" id = "hpblades"></a>
+	<a class="anchorM" id = "hpbladesM"></a>
+</p>
+	<div class="row tableRow">
+	<div class="col-sm-1 serverType" style="padding-top:8%;">HP Blades</div>
+	<div class="col-sm-11 tableCol" style="width:88%;">
+		<table class="table table-bordered table-striped" style="box-shadow: 5px 10px 20px #cecece;">
+		<thead>
+		  <tr>
+			<th style="width:7%">Generation</th>
+			<th style="width:10%">Model</th>
+			<th style="width:50%">Description</th>
+			<th style="width:5%">Spec Sheet</th>
+			<th style="width:5%">Starting Price</th>
+			<th style="width:6%; background-color:#ef6b00"><a href="#page-top" Class="back-to-top">Top<i class=" icon-angle-double-up"></i></a></th>
+		  </tr>
+		</thead>
+		<tbody>
+		  <tr>
+			<td>Gen 7</td>
+			<td>ProLiant BL460c<br>
+			<img src="media/sys_bl460cg7.png" width=100%>
+			</td>
+			<td style="font-size:16px">
+				<ul>
+				<li>Up to 2x Intel Xeon 5500 and 5600 series processors</li>
+				<li>Up to 12 MB cache</li>
+				<li>Up to 144GB PC3-8500 ECC RDIMM, 72GB PC3-10600R, or 36GB PC3-10600E</li>
+				<li>Up to 12x 3.5” SAS/SATA</li>
+				</ul>
+			</td>
+			<td>
+				<a href="#" onclick="setModalSrc('HP ProLiant BL460c G7 Datasheet','stalliontek_server_specs/bl460cg7.pdf#zoom=100')" data-toggle="modal" data-target="#specsModal">View</a>
+			</td>
+			<td>$79</td>
+			<td><a href="https://www.stalliontek.com/used-refurbished-servers/servers/hp-servers/hp-blades/hp-proliant-bl460c-g7" target="_blank">Configure Now</a></td>
+		  </tr>
+		  <tr>
+			<td>Gen 8</td>
+			<td>ProLiant BL460c<br>
+			<img src="media/sys_bl460cg8.png" width=100%>
+			</td>
+			<td style="font-size:16px">
+				<ul>
+				<li>Up to 2x Intel Xeon 5500 and 5600 series processors</li>
+				<li>Up to 12 MB cache</li>
+				<li>Up to 144GB PC3-8500 ECC RDIMM, 72GB PC3-10600R, or 36GB PC3-10600E</li>
+				<li>Up to 12x 3.5” SAS/SATA</li>
+				</ul>
+			</td>
+			<td>
+				<a href="#" onclick="setModalSrc('HP ProLiant BL460c G8 Datasheet','stalliontek_server_specs/bl460cg8.pdf#zoom=100')" data-toggle="modal" data-target="#specsModal">View</a>
+			</td>
+			<td>$249</td>
+			<td><a href="https://www.stalliontek.com/used-refurbished-servers/servers/hp-servers/hp-blades/hp-proliant-bl460c-g8" target="_blank">Configure Now</a></td>
+		  </tr>				  
+		</tbody>
+		</table>
+	</div>
+</div>
+
+<div id="sectionBanner_03" style="background: url(&quot;https://www.stalliontek.com/media/sectionBanner.jpg&quot;) 30% -2px no-repeat fixed; color: rgb(255, 255, 255); margin-left:-20px; margin-right:-50px; auto; padding: 88px 0px 104px; position: relative;">
+  <div class="overlay overlay-color" style="background-color: #000000; opacity: 0.2; filter: alpha(opacity=20);top:0;"></div>
+  <div class="parallax-slider" style="position: relative; z-index: 3;">
+    <div class="container">
+		<div class="row" style="text-align:center; margin-bottom:15px;">
+			<div class="section-des">Our warehouse has thousands of servers and components in stock to ensure you your orders are fulfilled on time and to give you the most customizablility options.</div>
+		</div>
+		<div class="row" style="text-align:center;">
+			<div class="section-link hvr-pulse section-contact">
+				<a href="https://www.stalliontek.com/contact">Contact Us</a>
+			</div>
+		</div>
+    </div>
+  </div>
+</div>
+<br>	
+	<p>
+	<a class="anchor" id = "dell"></a>
+	<a class="anchorM" id = "dellM"></a>
+	<div class="serverTitle">Dell Servers</div><br>
+	<div class="serverDescription">Dell™ PowerEdge™ servers are built to support the work that IT organizations do. They are engineered to handle the most demanding business applications and designed with specific features to 
+	better run workloads like HPC, collaboration, database, ERP, business intelligence and data warehousing.</div>
+	</p>
+	
+<a class="anchor" id = "dell1u"></a>
+<a class="anchorM" id = "dell1uM"></a>
+	<div class="row tableRow">
+	<div class="col-sm-1 serverType" style="padding-top:12%;">Dell 1U Rackmount</div>
+	<div class="col-sm-11 tableCol" style="width:88%;">
+		<table class="table table-bordered table-striped" style="box-shadow: 5px 10px 20px #cecece;">
+		<thead>
+		  <tr>
+			<th style="width:7%">Generation</th>
+			<th style="width:11%">Model</th>
+			<th style="width:49%">Description</th>
+			<th style="width:5%">Spec Sheet</th>
+			<th style="width:5%">Starting Price</th>
+			<th style="width:6%; background-color:#ef6b00"><a href="#page-top" Class="back-to-top">Top<i class=" icon-angle-double-up"></i></a></th>
+		  </tr>
+		</thead>
+		<tbody>
+		  <tr>
+			<td rowspan="2" style="background-color:#ffffff">Gen 11</td>
+			<td>PowerEdge R410<br>
+			<img src="media/sys_r410.png" width=100%>
+			</td>
+			<td style="font-size:16px">
+				<ul>
+				<li>Up to 2x Quad-core or six-core Intel Xeon processor 5500 and 5600 series Processors</li>
+				<li>Up to 12MB per core</li>
+				<li>Fully expandable up to 128GB PC3-8500 ECC RDIMM. Up to 64GB PC3-10600 ECC RDIMM. Up to 32GB PC3-10600 ECC UDIMM, PC3-8500 ECC UDIMM</li>
+				<li>Up to 4x 3.5" SAS/SATA hard drives</li>
+				</ul>
+			</td>
+			<td>
+				<a href="#" onclick="setModalSrc('Dell Poweredge R410 Datasheet','stalliontek_server_specs/r410.pdf#zoom=100')" data-toggle="modal" data-target="#specsModal">View</a>
+			</td>
+			<td>$249</td>
+			<td><a href="https://www.stalliontek.com/used-refurbished-servers/servers/dell-servers/dell-1u-servers/dell-poweredge-r410" target="_blank">Configure Now</a></td>
+		  </tr>
+		  <tr>
+			<td>PowerEdge R610<br>
+				<img src="media/sys_r610.png" width=100%>
+			</td>
+			<td style="font-size:16px">
+				<ul>
+				<li>Supports up to 2x Quad or Six Core Intel Xeons Processors</li>
+				<li>Up to 4MB and 8MB</li>
+				<li>Fully expandable up to 192GB PC3-10600R</li>
+				<li>Up to 6x 2.5" SAS/SATA hard drives</li>
+				</ul>
+			</td>
+			<td>
+				<a href="#" onclick="setModalSrc('Dell Poweredge R610 Datasheet','stalliontek_server_specs/r610.pdf#zoom=100')" data-toggle="modal" data-target="#specsModal">View</a>
+			</td>
+			<td>$124</td>
+			<td><a href="https://www.stalliontek.com/used-refurbished-servers/servers/dell-servers/dell-1u-servers/dell-poweredge-r610" target="_blank">Configure Now</a></td>
+		  </tr>
+		  <tr>
+			<td>Gen 12</td>
+			<td>PowerEdge R620<br>
+				<img src="media/sys_r620.png" width=100%>
+			</td>
+			<td style="font-size:16px">
+				<ul>
+				<li>Supports up to 2x Intel Xeons E5-2600 Series Processors</li>
+				<li>Up to 2.5MB per core</li>
+				<li>Fully expandable up to 768GB PC3-10600R, PC3-8500R</li>
+				<li>Up to 10x 2.5" SAS/SATA hard drives</li>
+				</ul>
+			</td>
+			<td>
+				<a href="#" onclick="setModalSrc('Dell Poweredge R620 Datasheet','stalliontek_server_specs/r620.pdf#zoom=100')" data-toggle="modal" data-target="#specsModal">View</a>
+			</td>
+			<td>$699</td>
+			<td><a href="https://www.stalliontek.com/used-refurbished-servers/servers/dell-servers/dell-1u-servers/dell-poweredge-r620" target="_blank">Configure Now</a></td>
+		  </tr>
+		  <tr>
+			<td>Gen 13</td>
+			<td>PowerEdge R630<br>
+				<img src="media/sys_r630.png" width=100%>
+			</td>
+			<td style="font-size:16px">
+				<ul>
+				<li>Supports up to 2x Intel Xeons E5-2600 v3 Series</li>
+				<li>Up to 2.5MB per core</li>
+				<li>Fully expandable up to 768GB DDR4 2133 MT/s RDIMM and LRDIMM (24 DIMM Slots)</li>
+				<li>Up to 8x 2.5" SAS/SATA/SSD hard drives</li>
+				</ul>
+			</td>
+			<td>
+				<a href="#" onclick="setModalSrc('Dell Poweredge R630 Datasheet','stalliontek_server_specs/r630.pdf#zoom=100')" data-toggle="modal" data-target="#specsModal">View</a>
+			</td>
+			<td>$1519</td>
+			<td><a href="https://www.stalliontek.com/used-refurbished-servers/servers/dell-servers/dell-1u-servers/dell-poweredge-r630" target="_blank">Configure Now</a></td>
+		  </tr>
+ 		  
+		</tbody>
+		</table>
+	</div>
+</div>
+
+<p>
+	<a class="anchor" id = "dell2u"></a>
+	<a class="anchorM" id = "dell2uM"></a>
+</p>
+<div class="row tableRow">
+	<div class="col-sm-1 serverType" style="padding-top:15%;">Dell 2U<br> Rackmount</div>
+	<div class="col-sm-11 tableCol" style="width:88%;">
+		<table class="table table-bordered table-striped" style="box-shadow: 5px 10px 20px #cecece;">
+		<thead>
+		  <tr>
+			<th style="width:7%">Generation</th>
+			<th style="width:11%">Model</th>
+			<th style="width:49%">Description</th>
+			<th style="width:5%">Spec Sheet</th>
+			<th style="width:5%">Starting Price</th>
+			<th style="width:6%; background-color:#ef6b00"><a href="#page-top" Class="back-to-top">Top<i class=" icon-angle-double-up"></i></a></th>
+		  </tr>
+		</thead>
+		<tbody>
+		  <tr>
+			<td rowspan="2">Gen 11</td>
+			<td>PowerEdge R510<br>
+			<img src="media/sys_r510.png" width=100%>
+			</td>
+			<td style="font-size:16px">
+				<ul>
+				<li>Supports up to 2x Quad or Six-Core Intel Xeon 55xx or 56xx Series Processors</li>
+				<li>Up to 8MB cache</li>
+				<li>Fully expandable up to 128GB PC3-10600 ECC RDIMM, PC3-8500 ECC RDIMM. Up to 16GB PC3-10600 ECC UDIMM, PC3-8500 ECC UDIMM</li>
+				<li>Up to 12x 3.5" SAS/SATA Hard Drives</li>
+				</ul>
+			</td>
+			<td>
+				<a href="#" onclick="setModalSrc('Dell Poweredge R510 Datasheet','stalliontek_server_specs/r510.pdf#zoom=100')" data-toggle="modal" data-target="#specsModal">View</a>
+			</td>
+			<td>$349</td>
+			<td><a href="https://www.stalliontek.com/used-refurbished-servers/servers/dell-servers/dell-2u-servers/dell-poweredge-r510" target="_blank">Configure Now</a></td>
+		  </tr>
+		  <tr>
+			
+			<td>PowerEdge R710<br>
+				<img src="media/sys_r710.png" width=100%>
+			</td>
+			<td style="font-size:16px">
+				<ul>
+				<li>Supports up to 2x Quad or Six-Core Intel Xeon 55xx or 56xx Series Processors</li>
+				<li>Up to 12 MB cache</li>
+				<li>Up to 288GB PC3-8500/144GB PC3-10600/24GB PC3-8500 ECC RDIMM. Up PC3-10600 ECC UDIMM</li>
+				<li>Up to 8x 2.5" or 6x 3.5" SAS/SATA hard drives. Solid State Drives may also be available.</li>
+				</ul>
+			</td>
+			<td>
+				<a href="#" onclick="setModalSrc('Dell Poweredge R710 Datasheet','stalliontek_server_specs/r710.pdf#zoom=100')" data-toggle="modal" data-target="#specsModal">View</a>
+			</td>
+			<td>$249</td>
+			<td><a href="https://www.stalliontek.com/used-refurbished-servers/servers/dell-servers/dell-2u-servers/dell-poweredge-r710" target="_blank">Configure Now</a></td>
+		  </tr>
+		  <tr>
+			<td rowspan="2" style="background-color:#ffffff">Gen 12</td>
+			<td>PowerEdge R720<br>
+				<img src="media/sys_r720.png" width=100%>
+			</td>
+			<td style="font-size:16px">
+				<ul>
+				<li>Supports up to 2x Intel Xeon E5-2600 or E5-2600 v2 Series Processors</li>
+				<li>Up to 2.5MB per core; core options: 2, 4, 6, 8</li>
+				<li>Up to 768GB PC3-10600R, PC3-12800R, PC3-8500R</li>
+				<li>Up to 8x 2.5"/3.5" SAS/SATA hard drives or Up to 16x 2.5" SAS/SATA hard drives</li>
+				</ul>
+			</td>
+			<td>
+				<a href="#" onclick="setModalSrc('Dell Poweredge R720 Datasheet','stalliontek_server_specs/r720.pdf#zoom=100')" data-toggle="modal" data-target="#specsModal">View</a>
+			</td>
+			<td>$1099</td>
+			<td><a href="https://www.stalliontek.com/used-refurbished-servers/servers/dell-servers/dell-2u-servers/dell-poweredge-r720" target="_blank">Configure Now</a></td>
+		  </tr>
+		  <tr>
+			<td>PowerEdge R820<br>
+				<img src="media/sys_r820.png" width=100%>
+			</td>
+			<td style="font-size:16px">
+				<ul>
+				<li>Supports up to 4x E5-4600 Series Processor</li>
+				<li>Up to 20 MB L3 cache</li>
+				<li>Up to 1.5 TB (48 DIMM slots)</li>
+				<li>Up to 16x 2.5” SAS/SATA/SSD or Up to 8x 2.5” SAS/ SATA/ SSD</li>
+				</ul>
+			</td>
+			<td>
+				<a href="#" onclick="setModalSrc('Dell Poweredge R820 Datasheet','stalliontek_server_specs/r820.pdf#zoom=100')" data-toggle="modal" data-target="#specsModal">View</a>
+			</td>
+			<td>$1199</td>
+			<td><a href="https://www.stalliontek.com/used-refurbished-servers/servers/dell-servers/dell-2u-servers/dell-poweredge-r820" target="_blank">Configure Now</a></td>
+		  </tr>
+		  <tr>
+			<td>Gen 13</td>
+			<td>PowerEdge R730<br>
+				<img src="media/sys_r730.png" width=100%>
+			</td>
+			<td style="font-size:16px">
+				<ul>
+				<li>Supports up to 2x Intel Xeon E5-2600 v3 or v4 Series Processors </li>		
+				<li>Up to 768GB DDR4 2133 MT/s RDIMM and LRDIMM (24 DIMM Slots) or Up to 1.5TB DDR4 2400 MT/s (24 DIMM Slots)</li>
+				<li>Up to 16 or 8 x 2.5" SAS/SATA/SSD drives or Up to 8x 3.5" SAS/SATA drives</li>
+				</ul>
+			</td>
+			<td>
+				<a href="#" onclick="setModalSrc('Dell Poweredge R730 Datasheet','stalliontek_server_specs/r730.pdf#zoom=100')" data-toggle="modal" data-target="#specsModal">View</a>
+			</td>
+			<td>$1619</td>
+			<td><a href="https://www.stalliontek.com/used-refurbished-servers/servers/dell-servers/dell-2u-servers/dell-poweredge-r730" target="_blank">Configure Now</a></td>
+		  </tr>
+	 		  
+		</tbody>
+		</table>
+	</div>
+</div>
+
+<p>
+	<a class="anchor" id = "dell3u"></a>
+	<a class="anchorM" id = "dell3uM"></a>
+</p>
+<div class="row tableRow">
+	<div class="col-sm-1 serverType" style="padding-top:8%;">Dell 3U+ Rackmount</div>
+	<div class="col-sm-11 tableCol" style="width:88%;">
+		<table class="table table-bordered table-striped" style="box-shadow: 5px 10px 20px #cecece;">
+		<thead>
+		  <tr>
+			<th style="width:7%">Generation</th>
+			<th style="width:11%">Model</th>
+			<th style="width:49%">Description</th>
+			<th style="width:5%">Spec Sheet</th>
+			<th style="width:5%">Starting Price</th>
+			<th style="width:6%; background-color:#ef6b00"><a href="#page-top" Class="back-to-top">Top<i class=" icon-angle-double-up"></i></a></th>
+		  </tr>
+		</thead>
+		<tbody>
+		  <tr>
+			<td>Gen 10</td>
+			<td>PowerEdge R900<br>
+			<img src="media/sys_r900.png" width=100%>
+			</td>
+			<td style="font-size:16px">
+				<ul>
+				<li>Supports up to 4x Dual/Quad/Hex-Core 7200/7300/7400 series Intel Xeon processors</li>
+				<li>Up to 8MB L3 cache per processor</li>
+				<li>Fully expandable up to 256GB PC2-5300 ECC FB-DIMM, PC2-10600 ECC FB-DIMM</li>
+				<li>Up to 8x 2.5" SAS hard drives or Up to 5x 3.5" SAS / SATA hard drives</li>
+				</ul>
+			</td>
+			<td>
+				<a href="#" onclick="setModalSrc('Dell Poweredge R900 Datasheet','stalliontek_server_specs/r900.pdf#zoom=100')" data-toggle="modal" data-target="#specsModal">View</a>
+			</td>
+			<td>$99</td>
+			<td><a href="https://www.stalliontek.com/used-refurbished-servers/servers/dell-servers/dell-3u-servers/dell-poweredge-r900" target="_blank">Configure Now</a></td>
+		  </tr>
+		  <tr>
+			<td>Gen 11</td>
+			<td>PowerEdge R910<br>
+				<img src="media/sys_r910.png" width=100%>
+			</td>
+			<td style="font-size:16px">
+				<ul>
+				<li>Supports up to 4 Quad, Six or Eight-Core Intel Xeon Processors</li>
+				<li>Up to 24MB cache</li>
+				<li>Fully expandable up to 1TB PC3-10600 ECC RDIMM</li>
+				<li>Up to 16x 2.5" SAS/SSD Hard Drives or Up to 4x 2.5" SAS/SSD Hard Drives</li>
+				</ul>
+			</td>
+			<td>
+				<a href="#" onclick="setModalSrc('Dell Poweredge R910 Datasheet','stalliontek_server_specs/r910.pdf#zoom=100')" data-toggle="modal" data-target="#specsModal">View</a>
+			</td>
+			<td>$1184</td>
+			<td><a href="https://www.stalliontek.com/used-refurbished-servers/servers/dell-servers/dell-3u-servers/dell-poweredge-r910" target="_blank">Configure Now</a></td>
+		  </tr>  
+		</tbody>
+		</table>
+	</div>
+</div>
+
+<p>
+	<a class="anchor" id = "dellblades"></a>
+	<a class="anchorM" id = "dellbladesM"></a>
+</p>
+
+<div class="row tableRow">
+	<div class="col-sm-1 serverType" style="padding-top:3%;">Dell Blades</div>
+	<div class="col-sm-11 tableCol" style="width:88%;">
+		<table class="table table-bordered table-striped" style="box-shadow: 5px 10px 20px #cecece;">
+		<thead>
+		  <tr>
+			<th style="width:7%">Generation</th>
+			<th style="width:11%">Model</th>
+			<th style="width:49%">Description</th>
+			<th style="width:5%">Spec Sheet</th>
+			<th style="width:5%">Starting Price</th>
+			<th style="width:6%; background-color:#ef6b00"><a href="#page-top" Class="back-to-top">Top<i class=" icon-angle-double-up"></i></a></th>
+		  </tr>
+		</thead>
+		<tbody>
+		  <tr>
+			<td>Gen 12</td>
+			<td>PowerEdge M620<br>
+			<img src="media/sys_m620.png" width=100%>
+			</td>
+			<td style="font-size:16px">
+				<ul>
+				<li>Supports up to 2x E5-2600 v2 Series Processors</li>
+				<li>Up to 25MB cache per processor</li>
+				<li>Up to 768GB PC3-10600R, PC3-12800R, PC3-14900R, Up to 96GB PC3-12800E</li>
+				<li>Up to 2x 2.5" SAS or SATA hard drives</li>
+				</ul>
+			</td>
+			<td>
+				<a href="#" onclick="setModalSrc('Dell Poweredge M620 Datasheet','stalliontek_server_specs/m620.pdf#zoom=100')" data-toggle="modal" data-target="#specsModal">View</a>
+			</td>
+			<td>$499</td>
+			<td><a href="https://www.stalliontek.com/used-refurbished-servers/servers/dell-servers/dell-blades/dell-poweredge-m620" target="_blank">Configure Now</a></td>
+		  </tr>
+		</tbody>
+		</table>
+	</div>
+</div>
+
+<div id="sectionBanner_06" style="background: url(&quot;https://www.stalliontek.com/media/sectionBanner2.jpg&quot;) 30% -2px no-repeat fixed; color: rgb(255, 255, 255); margin-left:-20px; margin-right:-50px; auto; padding: 88px 0px 104px; position: relative;">
+  <div class="overlay overlay-color" style="background-color: #000000; opacity: 0.2; filter: alpha(opacity=20);top:0;"></div>
+  <div class="parallax-slider" style="position: relative; z-index: 3;">
+    <div class="container">
+		<div class="row">
+			<div style="width:29%; display:inline-block">
+			</div>
+			<div class="section-link hvr-pulse section-contact">
+				<a>Other Servers</a>
+			</div>
+			<div style="width:5%; display:inline-block">
+			</div>
+			<div class="section-link hvr-pulse section-contact">
+				<a href="https://www.stalliontek.com/contact">Contact Us</a>
+			</div>
+			<div style="width:5%; display:inline-block">
+			</div>
+			<div class="section-link hvr-pulse section-contact">
+				<a href="https://www.stalliontek.com/used-refurbished-servers/storage-solutions">Storage Solutions</a>
+			</div>
+			<div style="width:24%; display:inline-block">
+			</div>
+		</div>
+    </div>
+  </div>
+</div>

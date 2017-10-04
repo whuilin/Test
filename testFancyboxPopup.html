@@ -1,0 +1,53 @@
+<a href="#popup" id="popup-open" style="display:none;"></a>
+
+<div id="popup" style="display:none; width:650px;max-width:100%">
+
+	<div class="row">
+		
+		<div class="col-md-5 col-lg-5">
+			
+			<a href="{{YOUR ASSET URL}}"><img class="img-responsive" src="{{YOUR IMAGE URL}}">	</a>
+							
+		</div>
+		
+		<div class="col-md-7 col-lg-7">
+			
+			<h3><a href="{{YOUR ASSET URL}}">{{YOUR ASSET TITE}}</a></h3>
+			{{YOUR FORM}}
+			
+		</div>
+			
+	</div>
+		
+</div>
+
+<script type="text/javascript">
+	
+	jQuery(function() {
+	
+		// CHECK IF THE WINDOW IS LARGE TO ACCOMMODATE THE POPUP (I HATE POPUPS ON MOBILE)
+		if (jQuery(window).width() > 992) {
+			
+			// WAIT 3 SECONDS AND OPEN	POPUP #1	
+			if (jQuery.cookie('popup1') != 'viewed') {
+	
+				setTimeout(function() { 
+					jQuery.fancybox.open(jQuery('#popup-open'), { 'afterClose': function() { jQuery.cookie('popup1', 'viewed', { expires: 7 }); } } );
+				}, 3000);
+			
+			}
+			
+			// WAIT 10 MINUTES AND OPEN POPUP #2
+			if (jQuery.cookie('popup2') != 'viewed') {
+				
+				setTimeout(function() { 
+					jQuery.fancybox.open(jQuery('#popup-open'), { 'afterClose': function() { jQuery.cookie('popup2', 'viewed', { expires: 7 }); } } );
+				}, 600000); 
+			}
+			
+		}
+		
+	});
+
+
+</script>
