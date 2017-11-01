@@ -1,0 +1,157 @@
+/*created for blog posts @lin 20171030*/
+
+.postAdv{
+	padding-left:0;
+	padding-right:0;
+	margin-top:15px;
+	margin-bottom:15px;
+	background-color:#ffffff;
+	text-align:center;
+}
+.postAdv:hover{
+	cursor:pointer;
+    -moz-transform: translate(-2px, -2px);
+    -ms-transform: translate(-2px, -2px);
+    -o-transform: translate(-2px, -2px);
+    -webkit-transform: translate(-2px, -2px);
+    transform: translate(-2px, -2px)
+	-webkit-transition: all 200ms ease-in-out;
+	transition: all 200ms ease-in-out; 
+}
+.postAdv p{font-weight:600;padding-bottom:10px;padding-top:10px;}
+.postAdv img{max-width:400px; border-radius:5px;border: 1px solid #003c66;}
+.postAdv:hover a{text-decoration:none;}
+.btn-config {
+    background-color: #ffb119;
+    font-size: 14px;
+    padding: 6px;
+    display: inline-block;
+	color:#333333;
+}
+.btn-config:hover{color:#ffffff;background-color:#cb0000;}
+
+.CL-bot {
+    position: relative;
+    border-bottom: 0;
+    padding-left: 30px;
+    padding-right: 30px;
+	text-align:center;
+	margin-bottom: 16px;
+    padding: 8px 0;
+	margin-top:0px;
+}
+.CL-bot:before {
+    position: absolute;
+    background-color: #0073c6;
+    content: "";
+    height: 2px;
+    bottom: 0;
+    left: 15px;
+    right: 0;
+    z-index: 1;
+}
+.CL-bot:after {
+    background-color: #0073c6;
+    bottom: 12px;
+    content: "";
+    height: 2px;
+    left: -2px;
+    position: absolute;
+    -webkit-transform-origin: bottom;
+    transform-origin: bottom;
+    -webkit-transform: rotate(-120deg);
+    transform: rotate(-120deg);
+    width: 25px;
+    z-index: 1;
+}
+.CL-top{
+	position:relative;
+	margin-top:25px;
+	padding-top:16px;
+}
+.CL-top:before{
+	background-color: #000;
+    content: "";
+    height: 2px;
+    position: absolute;
+    right: 19px;
+    top: 1px;
+    -webkit-transform: rotate(-120deg);
+    transform: rotate(-120deg);
+    -webkit-transform-origin: top right;
+    transform-origin: top right;
+    width: 35px;
+    z-index: 1;
+}
+.CL-top:after{
+	background: #000;
+    content: "";
+    height: 2px;
+    position: absolute;
+    right: 18px;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+.CL-top span{color:#0073c6; font-size:18px;font-style:italic;font-weight:600;}
+
+.logo{float:left;margin-left:50px;position:absolute;left:0;}
+h1.postPageTitle {
+    position: relative;
+    font-size: 48px;
+    text-align: center;
+    margin-bottom:10px;
+	margin-top:10px;
+  }
+  
+h1.postPageTitle div{
+  background: -webkit-linear-gradient(#0073c6, #ffb119);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position:absolute;
+  font-weight:bold;
+}
+h1.postPageTitle:after {
+    text-shadow: 0 0 0.5px #000000;
+    color: transparent;
+	font-weight:bold;
+  }
+
+h1.postPageTitle:after {
+    content: 'StallionTek Blog Post';
+ }
+.breadcrumbs{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    font-size: 13px;
+    line-height: 1;
+    color: #fff;
+    background-color: #0072C6;
+}
+.breadcrumbs li a{color:#fff;}
+.breadcrumbs ul{list-style:none;margin:0;padding:0;}
+.breadcrumbs li {
+    display: inline;
+    vertical-align: top;
+}
+.breadcrumbs span.breadcrumbs-split {
+    vertical-align: middle;
+    margin: 0 8px;
+    font-size: 12px;
+}
+
+.postTitle{margin-bottom:25px;}
+.postTitle h3{color:#6a6a6a;font-style:italic;}
+.postAuthor {color:#0073c6;}
+.postText{margin-top:25px;margin-bottom:100px;}
+.postText p{font-size:18px;line-height:1.6;margin-bottom:25px;}
+
+.social-nets-wrapper{margin-bottom:25px;}
+.social-nets-wrapper ul li{display:inline-block; margin:2px 0;}
+.social-nets-wrapper ul li a{padding:8px; color:#ffffff;}
+.social-nets-wrapper ul li:hover a{text-decoration:none; opacity:0.9;}
+a[title="facebook"]{background-color:#3b5998;}
+a[title="twitter"]{background-color:#00aced;}
+a[title="linkedin"]{background-color:#007bb5;}
+.social-nets-wrapper ul li i{font-size:16px;}
+.social-nets-wrapper ul li span{font-size:12px; margin-left:5px;margin-right:2px;}
